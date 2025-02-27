@@ -1,0 +1,21 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  ssh-server:
+    build:
+      context: ./ssh_server
+    image: ssh_server_img
+    container_name: ssh_server
+    tty: true
+  ssh-client: 
+    build:
+      context: ./ssh_client
+    image: ssh_client_img
+    container_name: ssh_client 
+    volumes: 
+        - ./ssh_client:/app
+    depends_on:
+      - ssh-server
+    stdin_open: true  
+    tty: true        
