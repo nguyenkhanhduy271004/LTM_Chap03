@@ -47,7 +47,7 @@ int main()
     }
 
     int port = 22;
-    ssh_options_set(session, SSH_OPTIONS_HOST, "172.18.0.2"); // Thay IP đúng
+    ssh_options_set(session, SSH_OPTIONS_HOST, "172.18.0.2");
     ssh_options_set(session, SSH_OPTIONS_PORT, &port);
 
     if (ssh_connect(session) != SSH_OK)
